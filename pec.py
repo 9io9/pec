@@ -27,6 +27,9 @@ if __name__ == "__main__":
         macros = []
         macid = 1    
 
+        macros.append("#ifndef {}\n".format(sys.argv[3]))
+        macros.append("#define {}\n".format(sys.argv[3]))
+
         for stop, stopc in sc:
             stc = re.sub(r'\s+', '', stopc).split(',')
 
@@ -38,5 +41,7 @@ if __name__ == "__main__":
                 macros.append("#define {} {}\n".format(top + stop + stcc, macid))
                 macid += 1
 
+        macros.append("#endif\n")
+        
         with open(sys.argv[2], "w") as echf:
             echf.writelines(macros)
