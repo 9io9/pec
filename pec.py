@@ -38,5 +38,5 @@ if __name__ == "__main__":
                 macros.append("#define {} {}\n".format(top + stop + stcc, macid))
                 macid += 1
 
-        with open("ec.h", "w") as echf:
+        with open(argv[2], "w") as echf:
             echf.writelines(macros)
