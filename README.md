@@ -5,5 +5,5 @@ a python parser for ec file
 
 # Get Start
 ```bash
-python3 pec.py path/to/file.ec path/to/file.h # will generate header file in specified path
+python3 pec.py path/to/file.ec path/to/file.h include_guard # will generate header file in specified path with include_guard
 ```
